@@ -29,7 +29,7 @@ const handler = NextAuth({
                 if (!userExists) {
                     await User.create({
                         email: profile.email,
-                        username: profile.name.replace(" ", "").toLowerCase(),
+                        username: profile.name.length < 10 ? (profile.name.replace(" ", "").toLowerCase() + "promptshare") : profile.name.replace(" ", "").toLowerCase(),
                         image: profile.picture
                     })
                 }

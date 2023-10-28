@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+const PromptCard = ({ post, handleTagClick, handleDelete }) => {
 	const { data: session } = useSession();
 	const pathName = usePathname();
 	const router = useRouter();
@@ -15,10 +15,22 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 		navigator.clipboard.writeText(post.prompt);
 		setTimeout(() => setCopied(""), 3000);
 	};
+
+	const handleEdit = (post) => {
+		router.push(`/update-prompt?id=${post._id}`);
+	};
+
+	const handleUserPage = async (post) => {
+		router.push(`/profile?user=${post.creator._id}`);
+	};
+
 	return (
 		<div className="prompt_card">
 			<div className="flex justify-between items-start gap-5">
-				<div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+				<div
+					className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
+					onClick={() => handleUserPage(post)}
+				>
 					<Image
 						src={post.creator.image}
 						alt="user_image"
@@ -44,6 +56,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 						}
 						width={12}
 						height={12}
+						alt=""
 					/>
 				</div>
 			</div>
@@ -58,13 +71,13 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 				<div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
 					<p
 						className="font-inter text-sm green_gradient cursor-pointer"
-						onClick={handleEdit}
+						onClick={() => handleEdit(post)}
 					>
 						Edit
 					</p>
 					<p
 						className="font-inter text-sm orange_gradient cursor-pointer"
-						onClick={handleDelete}
+						onClick={() => handleDelete(post)}
 					>
 						Delete
 					</p>

@@ -16,32 +16,9 @@ const MyProfile = () => {
 			setPosts(data);
 		};
 		if (session?.user.id) fetchPost();
-	}, []);
+	}, [session]);
 
-	const handleEdit = (post) => {
-		router.push(`/update-prompt?id=${post._id}`);
-	};
-	const handleDelete = async (post) => {
-		const hasConfirmed = confirm("Are you sure you want to delete the prompt?");
-		if (hasConfirmed) {
-			try {
-				await fetch(`/api/prompt/${post._id.toString()}`, {
-					method: "DELETE",
-				});
-				const filteredPosts = posts.filter((p) => p._id !== post._id);
-				setPosts(filteredPosts);
-			} catch (error) {}
-		}
-	};
-	return (
-		<Profile
-			name="My"
-			desc="Welcome to your profile page"
-			data={posts}
-			handleEdit={handleEdit}
-			handleDelete={handleDelete}
-		/>
-	);
+	return <Profile name="My" desc="Welcome to your profile page" data={posts} />;
 };
 
 export default MyProfile;

@@ -1,7 +1,19 @@
 import React from "react";
 import PromptCard from "./PromptCard";
 
-const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
+const Profile = ({ name, desc, data }) => {
+	const handleDelete = async (post) => {
+		const hasConfirmed = confirm("Are you sure you want to delete the prompt?");
+		if (hasConfirmed) {
+			try {
+				await fetch(`/api/prompt/${post._id.toString()}`, {
+					method: "DELETE",
+				});
+				const filteredPosts = data.filter((p) => p._id !== post._id);
+				setPosts(filteredPosts);
+			} catch (error) {}
+		}
+	};
 	return (
 		<section className="w-full">
 			<h1 className="head_text text-left">
@@ -13,8 +25,8 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
 					<PromptCard
 						key={post.id}
 						post={post}
-						handleEdit={handleEdit && handleEdit(post)}
-						handleDelete={handleDelete && handleEdit(post)}
+						handleDelete={handleDelete}
+						data={data}
 					/>
 				))}
 			</div>
