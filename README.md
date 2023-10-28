@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PromptShare - An application that lets you share prompts and find relevant prompts, also filter them by tags.
 
-## Getting Started
+[![Version](https://img.shields.io/badge/version-1.0.0-green)](https://github.com/saikrishnadas/PromptShare)
+[![Live App](https://img.shields.io/badge/demo-online-green)](https://prompt-share-one.vercel.app/)
 
-First, run the development server:
+**PromptShare** is a user-friendly application designed to foster creativity and collaboration. 
+It empowers users to easily share prompts for various creative endeavors, whether it's writing, brainstorming, or artistic inspiration. 
+With its intuitive interface, you can discover and filter prompts by tags, making it effortless to find exactly what you need to spark your imagination. 
+Whether you're seeking inspiration or looking to share your own creative prompts, PromptShare is the go-to platform for a community of thinkers, writers, and artists to connect and inspire each other.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![App Screenshot](https://thestobookimages.s3.ap-south-1.amazonaws.com/promptshare.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+https://prompt-share-one.vercel.app/
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Frameworks:** NextJS _v13.5.4_
 
-## Learn More
+**State Management:** React Context
 
-To learn more about Next.js, take a look at the following resources:
+**CSS Library:** TailwindCss _v3.0_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Backend Frameworks:** Node _v18.18.0_, Severless NextJS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Database:** MongoDB, **ODM:** Mongoose _v7.5.3_
 
-## Deploy on Vercel
+**Authentication**: Next-Auth _v4.23.1_
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For support, email saikrishnadas666@gmail.com or message me on Linkedin.
+
+## Feedback
+
+If you have any feedback, please reach out to saikrishnadas666@gmail.com
+
+# Hi, I'm Sai Krishna Das! 👋
+
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://saikrishnadas.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sai-krishna-das/)
