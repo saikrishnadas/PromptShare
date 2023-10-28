@@ -1,5 +1,5 @@
 import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
+import Prompt from "@models/Prompt";
 
 //GET (READ)
 export const GET = async (req, { params }) => {
